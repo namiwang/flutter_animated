@@ -32,11 +32,11 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 
 ## TODO
 
-- [ ] it WILL FREEZE
-- [ ] BUG alpha composition
-- [ ] use the platform
+- [ ] it WILL FREEZE on large images
+- [ ] BUG malfunctioning alpha composition
+- [ ] should `use the platform`
   - android: android.graphics.Movie
-- [ ] show firstFrame while parsing
+- [ ] should show firstFrame while parsing
 - [ ] method to set speed/FPS
 - [ ] method to controll play/pause
 - [ ] method to set forward/reverse
