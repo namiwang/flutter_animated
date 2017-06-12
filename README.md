@@ -1,6 +1,6 @@
 # flutter_animated
 
-Animated images (gif/apng) support in flutter.
+Animated images (GIF/APNG/WebP) support in flutter.
 
 The plugin is under construction.
 
@@ -36,10 +36,13 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 - [ ] BUG malfunctioning alpha composition
 - [ ] should `use the platform`
   - android: android.graphics.Movie
+  - ios
+    - https://github.com/Flipboard/FLAnimatedImage
+    - https://github.com/ibireme/YYImage
 - [ ] should show firstFrame while parsing
 - [ ] method to set speed/FPS
 - [ ] method to controll play/pause
 - [ ] method to set forward/reverse
 - [ ] support input more than UInt8List
   - asset path, url, etc.
-- [ ] support more formats like apng
+- [ ] support more formats like APNG and WebP
