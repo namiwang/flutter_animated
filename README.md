@@ -24,7 +24,7 @@ dependencies:
 import 'flutter_animated/animated_gif.dart';
 
 // fetch a gif
-final UInt8List imgBytes = await http.readBytes('https://some.site/some.gif');
+final Uint8List imgBytes = await http.readBytes('https://some.site/some.gif');
 
 // generate a Widget for the gif
 final Widget gifWidget = new AnimatedGif(imgBytes);
