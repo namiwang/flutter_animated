@@ -1,0 +1,15 @@
+name: flutter_animated
+description: Animated gif/apng support in flutter.
+version: 0.0.1
+author: Nano WANG
+homepage: https://github.com/nanowang/flutter_animated
+
+flutter:
+  plugin:
+    androidPackage: com.yourcompany.flutteranimated # TODO change and replace org through the project
+    pluginClass: FlutterAnimatedPlugin
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image: any
