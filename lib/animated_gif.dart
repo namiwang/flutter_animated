@@ -3,7 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
-import 'package:image/image.dart' as image;
+import './gif_parser.dart';
 
 class AnimatedGif extends StatefulWidget {
   final Uint8List imgBytes;
@@ -22,10 +22,16 @@ class _AnimatedGifState extends State<AnimatedGif> {
   void initState() {
     super.initState();
 
+    // first frame
     _frames = [ new Image.memory( widget.imgBytes ) ];
 
-    // TODO BUGGY
-    _play();
+    _extractFrames().then((List frames){
+      setState((){
+        _frames = frames;
+      });
+
+      new Timer.periodic(const Duration(seconds: 1), (Timer timer){_updateFrame();});
+    });
   }
 
   @override
@@ -33,18 +39,8 @@ class _AnimatedGifState extends State<AnimatedGif> {
     return _frames[currentFrameIndex];
   }
 
-  void _play() {
-    _extractFrames().then((List frames){
-      _frames = frames;
-
-      new Timer.periodic(const Duration(seconds: 1), (Timer timer){_updateFrame();});
-    });
-  }
-
   Future<List<Image>> _extractFrames() async {
-    return image.decodeGifAnimation(widget.imgBytes).frames.map((image.Image frame){
-      return new Image.memory(image.encodeGif(frame), gaplessPlayback: true);
-    }).toList();
+    return parseGif(widget.imgBytes);
   }
 
   void _updateFrame() {
