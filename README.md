@@ -46,3 +46,5 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 - [ ] support input more than UInt8List
   - asset path, url, etc.
 - [ ] support more formats like APNG and WebP
+- [ ] proper testing
+- [ ] proper example
