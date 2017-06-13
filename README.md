@@ -32,14 +32,13 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 
 ## TODO
 
-- [ ] it WILL FREEZE on large images
+- [ ] it takes a long duration to decode large images
 - [ ] BUG malfunctioning alpha composition
 - [ ] should `use the platform`
   - android: android.graphics.Movie
   - ios
     - https://github.com/Flipboard/FLAnimatedImage
     - https://github.com/ibireme/YYImage
-- [ ] should show firstFrame while parsing
 - [ ] method to set speed/FPS
 - [ ] method to controll play/pause
 - [ ] method to set forward/reverse
@@ -48,3 +47,4 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 - [ ] support more formats like APNG and WebP
 - [ ] proper testing
 - [ ] proper example
+- [ ] proper annotation and doc generating
