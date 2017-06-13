@@ -1,3 +1,9 @@
-### [0.0.1] - 2017 Jun 5.
+## [0.0.1] - 2017 Jun 5.
 
-* provided a simple AnimatedGif class
+### Added
+- provided a simple AnimatedGif class
+
+## [0.0.2] - 2017 Jun 13.
+
+### Fixed
+- avoid freezing via an isolate
