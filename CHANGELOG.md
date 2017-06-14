@@ -10,5 +10,5 @@
 
 ## [0.0.3] - 2017 Jun 14.
 
-## Changed
+### Changed
 - change default constructor to named constrctor `.memory`
