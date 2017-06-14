@@ -35,7 +35,9 @@ final Widget gifWidget = new AnimatedGif(imgBytes);
 - [ ] it takes a long duration to decode large images
 - [ ] BUG malfunctioning alpha composition
 - [ ] should `use the platform`
-  - android: android.graphics.Movie
+  - android
+    - android.graphics.Movie
+    - https://github.com/koral--/android-gif-drawable
   - ios
     - https://github.com/Flipboard/FLAnimatedImage
     - https://github.com/ibireme/YYImage
