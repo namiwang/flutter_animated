@@ -45,6 +45,7 @@ The performance is way not ideal for now. The good news is, it shows the first f
 - [ ] `use the platform` for high performance
   - android
     - android.graphics.Movie
+    - https://github.com/bumptech/glide
     - https://github.com/koral--/android-gif-drawable
   - ios
     - https://github.com/Flipboard/FLAnimatedImage
