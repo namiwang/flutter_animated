@@ -30,11 +30,13 @@ final Uint8List imgBytes = await http.readBytes('https://some.site/some.gif');
 final Widget gifWidget = new AnimatedGif.memory(imgBytes);
 ```
 
-3. notes
+## NOTES
 
-Currently the only constructor is `.memory`.
+Currently the only format being supported is `gif` and the only constructor is `.memory`.
 
-The `AnimatedGif` is inherits from `Image` and `StatefulWidget`.
+`AnimatedGif` inherits from `Image` and `StatefulWidget`. This may change in the future though. It will always be a `Widget`, but maybe not an `Image`.
+
+The performance is way not ideal for now. The good news is, it shows the first frame while decoding.
 
 ## TODO
 
