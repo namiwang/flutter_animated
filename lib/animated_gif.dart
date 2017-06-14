@@ -8,7 +8,7 @@ import './gif_parser.dart';
 class AnimatedGif extends StatefulWidget {
   final Uint8List imgBytes;
 
-  const AnimatedGif(this.imgBytes, { Key key }) : super(key: key);
+  const AnimatedGif.memory(this.imgBytes, { Key key }) : super(key: key);
 
   @override
   _AnimatedGifState createState() => new _AnimatedGifState();

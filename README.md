@@ -17,7 +17,7 @@ dependencies:
   flutter_animated: any
 ```
 
-2. a demo:
+2. use it
 
 ```dart
 // import
@@ -27,14 +27,20 @@ import 'flutter_animated/animated_gif.dart';
 final Uint8List imgBytes = await http.readBytes('https://some.site/some.gif');
 
 // generate a Widget for the gif
-final Widget gifWidget = new AnimatedGif(imgBytes);
+final Widget gifWidget = new AnimatedGif.memory(imgBytes);
 ```
+
+3. notes
+
+Currently the only constructor is `.memory`.
+
+The `AnimatedGif` is inherits from `Image` and `StatefulWidget`.
 
 ## TODO
 
-- [ ] it takes a long duration to decode large images
+- [ ] POOR PERFORMANCE it takes seconds to decode large images
 - [ ] BUG malfunctioning alpha composition
-- [ ] should `use the platform`
+- [ ] `use the platform` for high performance
   - android
     - android.graphics.Movie
     - https://github.com/koral--/android-gif-drawable
