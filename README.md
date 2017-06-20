@@ -2,9 +2,7 @@
 
 Animated images (GIF/APNG/WebP) support in flutter.
 
-The plugin is under construction.
-
-It lacks of basic features, and has got a number of serious issues.
+The plugin is under construction and lacks of basic features.
 
 ## USAGE
 
@@ -34,31 +32,8 @@ final Widget gifWidget = new AnimatedGif.memory(imgBytes);
 
 ## NOTES
 
-Currently the only format being supported is `gif` and the only constructor is `.memory`.
+Currently the only format being supported is `gif`, the only constructor is `.memory`, and FPS is always being 1/s.
 
 `AnimatedGif` inherits from `Image` and `StatefulWidget`. This *may change in the future* though.
 
 The performance is way not ideal for now. The good news is, it shows the first frame while decoding.
-
-## TODO
-
-- POOR PERFORMANCE it takes seconds to decode large images
-  - checkout low level ImageProvider, ImageStream, RawImage, etc.
-  - or `use the platform` for high performance
-    - android
-      - android.graphics.Movie
-      - https://github.com/bumptech/glide
-      - https://github.com/koral--/android-gif-drawable
-    - ios
-      - https://github.com/Flipboard/FLAnimatedImage
-      - https://github.com/ibireme/YYImage
-- BUG malfunctioning alpha composition
-- method to set speed/FPS
-- method to controll play/pause
-- method to set forward/reverse
-- support input more than UInt8List
-  - asset path, url, etc.
-- support more formats like APNG and WebP
-- proper testing
-- proper example
-- proper annotation and doc generating
