@@ -8,7 +8,9 @@ It lacks of basic features, and has got a number of serious issues.
 
 ## USAGE
 
-1. require it in `pubspec.yaml`:
+### require it
+
+in `pubspec.yaml`:
 
 ```yaml
 dependencies:
@@ -17,7 +19,7 @@ dependencies:
   flutter_animated: any
 ```
 
-2. use it
+### basic usage
 
 ```dart
 // import
@@ -34,14 +36,14 @@ final Widget gifWidget = new AnimatedGif.memory(imgBytes);
 
 Currently the only format being supported is `gif` and the only constructor is `.memory`.
 
-`AnimatedGif` inherits from `Image` and `StatefulWidget`. This may change in the future though. It will always be a `Widget`, but maybe not an `Image`.
+`AnimatedGif` inherits from `Image` and `StatefulWidget`. This *may change in the future* though.
 
 The performance is way not ideal for now. The good news is, it shows the first frame while decoding.
 
 ## TODO
 
-- [ ] POOR PERFORMANCE it takes seconds to decode large images
-  - checkout ImageStream
+- POOR PERFORMANCE it takes seconds to decode large images
+  - checkout low level ImageProvider, ImageStream, RawImage, etc.
   - or `use the platform` for high performance
     - android
       - android.graphics.Movie
@@ -50,13 +52,13 @@ The performance is way not ideal for now. The good news is, it shows the first f
     - ios
       - https://github.com/Flipboard/FLAnimatedImage
       - https://github.com/ibireme/YYImage
-- [ ] BUG malfunctioning alpha composition
-- [ ] method to set speed/FPS
-- [ ] method to controll play/pause
-- [ ] method to set forward/reverse
-- [ ] support input more than UInt8List
+- BUG malfunctioning alpha composition
+- method to set speed/FPS
+- method to controll play/pause
+- method to set forward/reverse
+- support input more than UInt8List
   - asset path, url, etc.
-- [ ] support more formats like APNG and WebP
-- [ ] proper testing
-- [ ] proper example
-- [ ] proper annotation and doc generating
+- support more formats like APNG and WebP
+- proper testing
+- proper example
+- proper annotation and doc generating
