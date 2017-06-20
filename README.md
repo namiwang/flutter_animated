@@ -41,15 +41,16 @@ The performance is way not ideal for now. The good news is, it shows the first f
 ## TODO
 
 - [ ] POOR PERFORMANCE it takes seconds to decode large images
+  - checkout ImageStream
+  - or `use the platform` for high performance
+    - android
+      - android.graphics.Movie
+      - https://github.com/bumptech/glide
+      - https://github.com/koral--/android-gif-drawable
+    - ios
+      - https://github.com/Flipboard/FLAnimatedImage
+      - https://github.com/ibireme/YYImage
 - [ ] BUG malfunctioning alpha composition
-- [ ] `use the platform` for high performance
-  - android
-    - android.graphics.Movie
-    - https://github.com/bumptech/glide
-    - https://github.com/koral--/android-gif-drawable
-  - ios
-    - https://github.com/Flipboard/FLAnimatedImage
-    - https://github.com/ibireme/YYImage
 - [ ] method to set speed/FPS
 - [ ] method to controll play/pause
 - [ ] method to set forward/reverse

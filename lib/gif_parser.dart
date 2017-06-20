@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:image/image.dart' as image;
 
-Future<List<Image>> parseGif(Uint8List imgBytes) async {
+Future<List<ImageProvider>> parseGif(Uint8List imgBytes) async {
   var mainIn = new ReceivePort();
 
   await Isolate.spawn(_parser, mainIn.sendPort);
@@ -24,8 +24,8 @@ void _parser(SendPort parserOut) {
   parserOut.send(parserIn.sendPort);
 
   parserIn.listen((imgBytes){
-    final List<Image> parsedImages = image.decodeGifAnimation(imgBytes).frames.map((image.Image frame){
-      return new Image.memory(image.encodeGif(frame), gaplessPlayback: true);
+    final List<ImageProvider> parsedImages = image.decodeGifAnimation(imgBytes).frames.map((image.Image frame){
+      return new MemoryImage(image.encodeGif(frame));
     }).toList();
 
     parserOut.send(parsedImages);

@@ -6,24 +6,24 @@ import 'package:flutter/material.dart';
 import './gif_parser.dart';
 
 class AnimatedGif extends StatefulWidget {
-  final Uint8List imgBytes;
+  const AnimatedGif.memory(this.bytes, { Key key }) : super(key: key);
 
-  const AnimatedGif.memory(this.imgBytes, { Key key }) : super(key: key);
+  final Uint8List bytes;
 
   @override
   _AnimatedGifState createState() => new _AnimatedGifState();
 }
 
 class _AnimatedGifState extends State<AnimatedGif> {
-  List<Image> _frames = [];
-  int currentFrameIndex = 0;
+  List<ImageProvider> _frames = [];
+  int _currentFrameIndex = 0;
 
   @override
   void initState() {
     super.initState();
 
     // first frame
-    _frames = [ new Image.memory( widget.imgBytes ) ];
+    _frames = [ new MemoryImage(widget.bytes) ];
 
     _extractFrames().then((List frames){
       setState((){
@@ -36,18 +36,18 @@ class _AnimatedGifState extends State<AnimatedGif> {
 
   @override
   Image build(BuildContext context) {
-    return _frames[currentFrameIndex];
+    return new Image(image: _frames[_currentFrameIndex]);
   }
 
-  Future<List<Image>> _extractFrames() async {
-    return parseGif(widget.imgBytes);
+  Future<List<ImageProvider>> _extractFrames() async {
+    return parseGif(widget.bytes);
   }
 
   void _updateFrame() {
     setState((){
-      currentFrameIndex += 1;
-      if ( currentFrameIndex >= _frames.length ) {
-        currentFrameIndex = 0;
+      _currentFrameIndex += 1;
+      if ( _currentFrameIndex >= _frames.length ) {
+        _currentFrameIndex = 0;
       }
     });
   }
