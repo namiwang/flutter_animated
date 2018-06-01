@@ -1,5 +1,7 @@
 # flutter_animated
 
+**Animaged GIF is already supported in Flutter. You may not need this plugin anymore.**
+
 Animated images (GIF/APNG/WebP) support in flutter.
 
 The plugin is under construction and lacks of basic features.
